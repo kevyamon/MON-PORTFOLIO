@@ -1,0 +1,14 @@
+/* TEAM */
+  Founder: Kevin Amon (Kevy)
+  Site: https://kevin-amon.vercel.app/
+  From: Abidjan, Côte d'Ivoire
+
+/* THANKS */
+  Agency: KevyLLC
+
+/* SITE */
+  Last update: 2026/04/28
+  Language: French
+  Standards: HTML5, CSS3, ES6+
+  Components: React, Vite, Framer Motion
+  Software: Antigravity AI

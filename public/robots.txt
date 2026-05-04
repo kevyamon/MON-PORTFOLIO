@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+
+Sitemap: https://kevin-amon.vercel.app/sitemap.xml
