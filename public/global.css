@@ -795,9 +795,13 @@ body {
 /* Mobile Responsive */
 @media (max-width: 768px) {
     main.shell {
-        padding-top: 6rem;
+        padding-top: 5rem;
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+    
+    #hero {
+        padding-top: 6rem !important; /* Force smaller padding on mobile */
     }
     
     .parcours-grid,
