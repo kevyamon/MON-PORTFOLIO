@@ -1072,3 +1072,57 @@ body {
 .back-link:hover svg {
     transform: translateX(-3px);
 }
+
+/* Contact & WhatsApp Buttons */
+.nav-contact-btn {
+    background: var(--gold);
+    color: #120f09 !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 800 !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(182, 149, 87, 0.4);
+    background: var(--gold-strong);
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+    background: #20ba5a;
+}
+
+.whatsapp-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover svg {
+    transform: rotate(10deg) scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .whatsapp-btn {
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
