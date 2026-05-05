@@ -307,40 +307,63 @@ body {
     transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Profile Photo */
+/* Profile Photo with Animation */
 .profile-photo-container {
-    width: clamp(100px, 15vw, 150px);
-    height: clamp(100px, 15vw, 150px);
-    border-radius: 24px; /* Soft square/premium look */
-    padding: 3px;
-    background: linear-gradient(135deg, var(--gold), var(--gold-strong));
-    margin-bottom: 2.5rem;
+    width: clamp(150px, 25vw, 220px);
+    height: clamp(150px, 25vw, 220px);
+    border-radius: 32px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 0 auto 3rem;
     position: relative;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    transform: rotate(-3deg);
-    transition: transform 0.3s ease;
+    display: block;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-photo-container::before {
+    content: '';
+    position: absolute;
+    inset: -8px; /* Slightly larger for the animation area */
+    background: linear-gradient(90deg, transparent, var(--gold), transparent, var(--gold-strong), transparent);
+    background-size: 200% 100%;
+    border-radius: 40px;
+    z-index: -1;
+    animation: borderRotate 4s linear infinite;
+    opacity: 0.6;
+    filter: blur(8px);
+}
+
+@keyframes borderRotate {
+    0% { background-position: 0% 50%; transform: rotate(0deg); }
+    100% { background-position: 200% 50%; transform: rotate(360deg); }
+}
+
+.profile-photo-container:hover::before {
+    animation-duration: 2s; /* Speeds up on hover */
+    opacity: 1;
+    filter: blur(12px);
 }
 
 .profile-photo-container:hover {
-    transform: rotate(0deg) scale(1.05);
+    transform: scale(1.05);
 }
 
 .profile-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 22px;
-    filter: grayscale(20%); /* Premium aesthetic */
+    border-radius: 28px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    display: block;
 }
 
-.profile-photo-container::after {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    background: linear-gradient(135deg, var(--gold), transparent);
-    border-radius: 26px;
-    z-index: -1;
-    opacity: 0.5;
+@media (max-width: 768px) {
+    .profile-photo-container {
+        margin-bottom: 2rem;
+        width: 160px;
+        height: 160px;
+    }
 }
 
 @media (max-width: 768px) {
