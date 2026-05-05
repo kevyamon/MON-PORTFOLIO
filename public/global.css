@@ -290,6 +290,10 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.nav-toggle.is-open span {
+    background-color: var(--heading);
+}
+
 .nav-toggle.is-open span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
@@ -301,6 +305,42 @@ body {
 
 .nav-toggle.is-open span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Profile Photo */
+.profile-photo-container {
+    width: clamp(100px, 15vw, 150px);
+    height: clamp(100px, 15vw, 150px);
+    border-radius: 24px; /* Soft square/premium look */
+    padding: 3px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-strong));
+    margin-bottom: 2.5rem;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: rotate(-3deg);
+    transition: transform 0.3s ease;
+}
+
+.profile-photo-container:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 22px;
+    filter: grayscale(20%); /* Premium aesthetic */
+}
+
+.profile-photo-container::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, var(--gold), transparent);
+    border-radius: 26px;
+    z-index: -1;
+    opacity: 0.5;
 }
 
 @media (max-width: 768px) {
@@ -788,7 +828,7 @@ body {
         top: 0;
         left: 0;
         right: 0;
-        z-index: 100;
+        z-index: 1000;
         padding: 0.5rem;
     }
     
