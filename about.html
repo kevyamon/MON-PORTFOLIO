@@ -18,6 +18,12 @@
     <header class="site-header">
         <nav class="nav-shell">
             <a href="index.html" class="brand"><span>Kevin</span> Amon</a>
+            <div class="nav-items">
+                <a href="about.html">À propos</a>
+                <a href="expertise.html">Expertise</a>
+                <a href="parcours.html">Parcours</a>
+                <a href="accomplissements.html">Accomplissements</a>
+            </div>
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
                     <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -42,6 +48,10 @@
     </div>
 
     <main class="shell" style="padding-top: 8rem;">
+        <a href="index.html" class="back-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Retour
+        </a>
         <section class="reveal">
             <h2 class="section-title">Je pense chaque produit en termes de standing et d'impact.</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
@@ -77,6 +87,12 @@
     <footer class="site-footer shell">
         <p class="footer-text">(c) 2026 Kevin Amon. Portfolio</p>
     </footer>
+
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <script src="./public/data.js"></script>
     <script src="./public/main.js"></script>

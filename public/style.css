@@ -521,13 +521,17 @@ img {
     transform: translateY(3.5px) rotate(45deg);
 }
 
+.nav-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
 .nav-toggle.is-open span:last-child {
     transform: translateY(-3.5px) rotate(-45deg);
 }
 
 .hero {
     position: relative;
-    padding: 5.2rem 0 4.8rem;
+    padding: 8rem 0 4.8rem;
 }
 
 .hero::before {
@@ -1035,7 +1039,8 @@ body.page-ready .hero-stage.is-visible .hero-monolith {
 }
 
 .section {
-    padding: 2.4rem 0 1.6rem;
+    padding: 6rem 0 1.6rem;
+    scroll-margin-top: 5rem;
 }
 
 .section-heading {

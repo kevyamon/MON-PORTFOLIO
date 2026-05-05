@@ -3,14 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     init3DBackground();
     initScrollReveal();
+    initScrollToTop();
     
     // Check which page we are on and render specific content
     const path = window.location.pathname;
-    if (path.includes('parcours')) {
-        renderParcours();
-    } else if (path.includes('accomplissements')) {
-        renderAccomplissements();
-    }
 });
 
 /* Theme Logic */
@@ -120,87 +116,97 @@ function initScrollReveal() {
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
-/* Render Functions (Page Specific) */
-function renderParcours() {
-    const container = document.getElementById('parcours-container');
-    if (!container || !window.portfolioData?.parcours) return;
-
-    window.portfolioData.parcours.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'parcours-card glass-panel reveal';
-        
-        const isLong = item.description.length > 100;
-        const shortDesc = isLong ? item.description.substring(0, 95) + '...' : item.description;
-
-        card.innerHTML = `
-            <div class="card-header">
-                <span class="card-year">${item.year}</span>
-                <div class="card-icon">${item.icon}</div>
-            </div>
-            <h3 class="card-title">${item.title}</h3>
-            <p class="card-location">${item.location}</p>
-            <p class="card-desc" id="desc-${item.id}">${shortDesc}</p>
-            ${isLong ? `<button class="read-more-btn" onclick="openModal('${item.id}')">Lire tout</button>` : ''}
+/* Scroll To Top */
+function initScrollToTop() {
+    let btn = document.getElementById('scroll-to-top');
+    
+    if (!btn) {
+        btn = document.createElement('button');
+        btn.id = 'scroll-to-top';
+        btn.className = 'scroll-to-top';
+        btn.setAttribute('aria-label', 'Retour en haut');
+        btn.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
         `;
-        container.appendChild(card);
+        document.body.appendChild(btn);
+    }
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            btn.classList.add('is-visible');
+        } else {
+            btn.classList.remove('is-visible');
+        }
+    });
+    
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
-function renderAccomplissements() {
-    const container = document.getElementById('accomplissements-container');
-    if (!container || !window.portfolioData?.accomplissements) return;
 
-    window.portfolioData.accomplissements.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'accomplissement-card glass-panel reveal';
-        card.innerHTML = `
-            <div class="acc-media">
-                <img src="${item.mediaUrl}" alt="${item.title}">
-            </div>
-            <div class="acc-content">
-                <h3 class="acc-title">${item.title}</h3>
-                <p class="acc-desc">${item.description}</p>
-                <a href="${item.link}" target="_blank" class="acc-link">Voir le projet</a>
-            </div>
-        `;
-        container.appendChild(card);
-    });
-}
+
 
 /* Modal Logic for Parcours */
-window.openModal = function(id) {
-    const item = window.portfolioData.parcours.find(p => p.id === id);
+window.openParcoursModal = function(id) {
+    const data = {
+        'lokolink': {
+            badge: "NOVEMBRE 2025 – UNIVERSITÉ LOKO",
+            title: "Création de la plateforme de parrainage pour LOKO.",
+            content: "Par pilotage IA, j'ai créé la plateforme de parrainage de mon école. J'ai appelé cette plateforme LOKOLink, elle a pour mission de renforcer les relations Inter-étudiantes."
+        },
+        'yely': {
+            badge: "TERMINÉ – MAFÉRÉ",
+            title: "Développement d'une application de Taxi en ligne.",
+            content: "L'idée est de moderniser la circulation communale. L'application Yély vient donc simplifier la vie aux populations dans leurs déplacements de tous les jours."
+        }
+    };
+
+    const item = data[id];
     if (!item) return;
 
     const modal = document.createElement('div');
     modal.className = 'custom-modal-overlay';
+    modal.id = 'parcours-modal';
+    
     modal.innerHTML = `
-        <div class="custom-modal glass-panel">
-            <button class="modal-close" onclick="closeModal()">×</button>
-            <div class="modal-body" id="modal-scroll-area">
-                <span class="card-year">${item.year}</span>
-                <h3 class="section-title">${item.title}</h3>
-                <p class="card-location">${item.location}</p>
-                <div class="modal-text">
-                    ${item.description.repeat(5)} <!-- Placeholder for long content if needed, though original is not that long -->
-                    <p>${item.description}</p>
-                </div>
-                <button class="scroll-top-internal" onclick="document.getElementById('modal-scroll-area').scrollTo({top:0, behavior:'smooth'})">↑</button>
+        <div class="custom-modal">
+            <button class="modal-close" onclick="closeParcoursModal()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-header">
+                <span class="modal-badge">${item.badge}</span>
+                <h3 class="modal-title">${item.title}</h3>
+            </div>
+            <div class="modal-body">
+                <p>${item.content}</p>
             </div>
         </div>
     `;
+
     document.body.appendChild(modal);
+    
+    // Prevent background scrolling
     document.body.style.overflow = 'hidden';
+    
+    // Trigger animation
     setTimeout(() => modal.classList.add('is-open'), 10);
+
+    // Close on click outside
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeParcoursModal();
+    });
 };
 
-window.closeModal = function() {
-    const modal = document.querySelector('.custom-modal-overlay');
-    if (modal) {
-        modal.classList.remove('is-open');
-        setTimeout(() => {
-            modal.remove();
-            document.body.style.overflow = '';
-        }, 300);
-    }
+window.closeParcoursModal = function() {
+    const modal = document.getElementById('parcours-modal');
+    if (!modal) return;
+
+    modal.classList.remove('is-open');
+    setTimeout(() => {
+        modal.remove();
+        document.body.style.overflow = '';
+    }, 400);
 };

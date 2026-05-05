@@ -2,27 +2,45 @@ window.portfolioData = {
     parcours: [
         { 
             id: "1", 
-            year: "2023 – 2024", 
-            title: "Bac D", 
-            location: "Lycée Moderne MAG", 
-            description: "Bac général.", 
-            icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4L4 8L12 12L20 8L12 4Z"></path><path d="M4 16L12 20L20 16"></path><path d="M4 12L12 16L20 12"></path></svg>`
+            badge: "EN COURS", 
+            title: "BTS I.A.C. – Option Contrôle", 
+            location: "ISTTA", 
+            description: "Spécialisation en contrôle qualité, analyses physico-chimiques, microbiologie et HACCP.", 
+            icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>`
         },
         { 
             id: "2", 
-            year: "Du 03 au 24 Août 2025", 
+            badge: "DU 03 AU 24 AOÛT 2025", 
             title: "Stage – Contrôle Qualité", 
             location: "Copalen-Ci", 
-            description: "Immersion professionnelle : Analyse sensorielle, prélèvements, rédaction de rapports de contrôle qualité.", 
-            icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>`
+            description: "Immersion professionnelle : Analyse sensorielle, prélèvements, rédaction de rapports.", 
+            icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>`
         },
         { 
             id: "3", 
-            year: "En cours", 
-            title: "BTS I.A.C. – Option Contrôle", 
-            location: "ISTTA", 
-            description: "Spécialisation en contrôle qualité, analyses physico-chimiques, microbiologiques.", 
-            icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>`
+            badge: "EN COURS", 
+            title: "Portfolio Académique", 
+            location: "Projet Personnel", 
+            description: "Développement de ce site web interactif pour présenter mes compétences.", 
+            icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`
+        },
+        { 
+            id: "4", 
+            badge: "NOVEMBRE 2025", 
+            title: "Création de la plateforme de parrainage pour LOKO.", 
+            location: "Université LOKO", 
+            description: "Par pilotage IA, j'ai créé la plateforme de parrainage de mon école. J'ai appelé cette plateforme LOKOLink, elle a pour...", 
+            link: "#",
+            icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`
+        },
+        { 
+            id: "5", 
+            badge: "TERMINÉ", 
+            title: "Développement d'une application de Taxi en ligne.", 
+            location: "Maféré", 
+            description: "L'idée est de moderniser la circulation communale. L'application Yély vient donc simplifier la vie aux populations dan...", 
+            link: "#",
+            icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>`
         }
     ],
     accomplissements: [

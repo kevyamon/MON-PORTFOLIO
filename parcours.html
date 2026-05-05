@@ -18,6 +18,12 @@
     <header class="site-header">
         <nav class="nav-shell">
             <a href="index.html" class="brand"><span>Kevin</span> Amon</a>
+            <div class="nav-items">
+                <a href="about.html">À propos</a>
+                <a href="expertise.html">Expertise</a>
+                <a href="parcours.html">Parcours</a>
+                <a href="accomplissements.html">Accomplissements</a>
+            </div>
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
                     <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -42,15 +48,105 @@
     </div>
 
     <main class="shell" style="padding-top: 8rem;">
+        <a href="index.html" class="back-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Retour
+        </a>
         <h2 class="section-title reveal">Mon Parcours</h2>
-        <div id="parcours-container" class="parcours-grid">
-            <!-- Dynamically populated by main.js -->
+        <div id="parcours-container" class="timeline-container">
+            <div class="timeline-line"></div>
+            
+            <!-- Item 1 -->
+            <div class="timeline-item reveal">
+                <div class="timeline-icon-wrapper">
+                    <div class="timeline-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    </div>
+                </div>
+                <div class="parcours-card glass-panel">
+                    <span class="card-badge">EN COURS</span>
+                    <h3 class="card-title">BTS I.A.C. – Option Contrôle</h3>
+                    <p class="card-location">ISTTA</p>
+                    <p class="card-desc">Spécialisation en contrôle qualité, analyses physico-chimiques, microbiologie et HACCP.</p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="timeline-item reveal">
+                <div class="timeline-icon-wrapper">
+                    <div class="timeline-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    </div>
+                </div>
+                <div class="parcours-card glass-panel">
+                    <span class="card-badge">DU 03 AU 24 AOÛT 2025</span>
+                    <h3 class="card-title">Stage – Contrôle Qualité</h3>
+                    <p class="card-location">Copalen-Ci</p>
+                    <p class="card-desc">Immersion professionnelle : Analyse sensorielle, prélèvements, rédaction de rapports.</p>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="timeline-item reveal">
+                <div class="timeline-icon-wrapper">
+                    <div class="timeline-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                </div>
+                <div class="parcours-card glass-panel">
+                    <span class="card-badge">EN COURS</span>
+                    <h3 class="card-title">Portfolio Académique</h3>
+                    <p class="card-location">Projet Personnel</p>
+                    <p class="card-desc">Développement de ce site web interactif pour présenter mes compétences.</p>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="timeline-item reveal">
+                <div class="timeline-icon-wrapper">
+                    <div class="timeline-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                </div>
+                <div class="parcours-card glass-panel">
+                    <span class="card-badge">NOVEMBRE 2025</span>
+                    <h3 class="card-title">Création de la plateforme de parrainage pour LOKO.</h3>
+                    <p class="card-location">Université LOKO</p>
+                    <p class="card-desc">Par pilotage IA, j'ai créé la plateforme de parrainage de mon école. J'ai appelé cette plateforme LOKOLink, elle a pour...</p>
+                    <a href="javascript:void(0)" onclick="openParcoursModal('lokolink')" class="card-link">Cliquez pour voir plus</a>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="timeline-item reveal">
+                <div class="timeline-icon-wrapper">
+                    <div class="timeline-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    </div>
+                </div>
+                <div class="parcours-card glass-panel">
+                    <span class="card-badge">TERMINÉ</span>
+                    <h3 class="card-title">Développement d'une application de Taxi en ligne.</h3>
+                    <p class="card-location">Maféré</p>
+                    <p class="card-desc">L'idée est de moderniser la circulation communale. L'application Yély vient donc simplifier la vie aux populations dan...</p>
+                    <a href="javascript:void(0)" onclick="openParcoursModal('yely')" class="card-link">Cliquez pour voir plus</a>
+                </div>
+            </div>
         </div>
     </main>
 
     <footer class="site-footer shell">
-        <p class="footer-text">(c) 2026 Kevin Amon. Portfolio</p>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center;">
+            <a href="accomplissements.html" class="card-link" style="font-size: 1rem; margin: 0;">Voir mes accomplissements →</a>
+            <p class="footer-text">(c) 2026 Kevin Amon. Portfolio</p>
+        </div>
     </footer>
+
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <script src="./public/data.js"></script>
     <script src="./public/main.js"></script>

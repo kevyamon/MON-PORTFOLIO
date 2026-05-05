@@ -35,10 +35,7 @@ if (storedTheme === "light" || storedTheme === "dark") {
     applyTheme(storedTheme);
 }
 
-themeToggle?.addEventListener("click", () => {
-    const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    applyTheme(nextTheme);
-});
+// Theme toggle handled in main.js
 
 const closeMenu = () => {
     navMenu?.classList.remove("is-open");

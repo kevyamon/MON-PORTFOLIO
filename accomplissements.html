@@ -18,6 +18,12 @@
     <header class="site-header">
         <nav class="nav-shell">
             <a href="index.html" class="brand"><span>Kevin</span> Amon</a>
+            <div class="nav-items">
+                <a href="about.html">À propos</a>
+                <a href="expertise.html">Expertise</a>
+                <a href="parcours.html">Parcours</a>
+                <a href="accomplissements.html">Accomplissements</a>
+            </div>
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
                     <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -42,15 +48,38 @@
     </div>
 
     <main class="shell" style="padding-top: 8rem;">
+        <a href="index.html" class="back-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Retour
+        </a>
         <h2 class="section-title reveal">Mes Accomplissements</h2>
         <div id="accomplissements-container" class="accomplissements-grid">
-            <!-- Dynamically populated by main.js -->
+            <!-- Item 1 -->
+            <div class="accomplissement-card glass-panel reveal">
+                <div class="acc-media">
+                    <img src="https://res.cloudinary.com/dhc4yidpa/image/upload/v1777993624/f1fd46e1-77d6-4219-8e9b-825e546d9ec5.png" alt="Affiche Yély à Maféré">
+                </div>
+                <div class="acc-content">
+                    <h3 class="card-title" style="margin-top: 1rem;">Développement de Yély</h3>
+                    <p class="card-desc">On a développé Yély ! Une application pour moderniser la circulation communale avec les taxi.</p>
+                    <a href="https://download-yely.vercel.app/" target="_blank" class="card-link" style="color: var(--accent-green); text-decoration: none; font-weight: 700;">Voir la ressource source</a>
+                </div>
+            </div>
         </div>
     </main>
 
     <footer class="site-footer shell">
-        <p class="footer-text">(c) 2026 Kevin Amon. Portfolio</p>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center;">
+            <a href="parcours.html" class="card-link" style="font-size: 1rem; margin: 0;">Voir mon parcours →</a>
+            <p class="footer-text">(c) 2026 Kevin Amon. Portfolio</p>
+        </div>
     </footer>
+
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <script src="./public/data.js"></script>
     <script src="./public/main.js"></script>
