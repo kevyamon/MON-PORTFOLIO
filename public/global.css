@@ -866,9 +866,12 @@ body {
 
 .section-title {
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-size: clamp(1.8rem, 5vw, 4rem);
     color: var(--heading);
     margin-bottom: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Mobile Responsive */
@@ -998,8 +1001,10 @@ body {
     }
 
     .section-title {
-        font-size: 1.75rem;
-        word-wrap: break-word;
+        font-size: clamp(1.1rem, 4vw, 1.85rem);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .timeline-container {
@@ -1174,25 +1179,32 @@ body {
 .whatsapp-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-    background: #25d366;
+    justify-content: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, #25d366, #128c7e);
     color: white;
     text-decoration: none;
-    padding: 1.2rem 2.5rem;
+    padding: 1.2rem 2.8rem;
     border-radius: 100px;
     font-weight: 800;
     font-size: 1.1rem;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+    line-height: 1;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
 }
 
 .whatsapp-btn:hover {
     transform: scale(1.05) translateY(-5px);
     box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
-    background: #20ba5a;
+    background: linear-gradient(135deg, #2ae06d, #14a392);
 }
 
 .whatsapp-btn svg {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
     transition: transform 0.3s ease;
 }
 
@@ -1202,9 +1214,39 @@ body {
 
 @media (max-width: 768px) {
     .whatsapp-btn {
-        padding: 1rem 1.5rem;
-        font-size: 0.95rem;
-        width: 100%;
-        justify-content: center;
+        padding: 1rem 1.8rem;
+        font-size: 0.9rem;
+        width: fit-content;
+        margin: 0 auto;
     }
+}
+
+/* Utils for Read More */
+.content-truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-weight: 800;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    color: var(--gold-strong);
+    gap: 0.8rem;
 }

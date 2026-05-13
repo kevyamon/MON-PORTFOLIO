@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     init3DBackground();
     initScrollReveal();
     initScrollToTop();
+    initReadMore();
     
     // Check which page we are on and render specific content
     const path = window.location.pathname;
@@ -88,13 +89,20 @@ function init3DBackground() {
         scene.appendChild(cube);
     }
 
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        cubes.forEach((c, i) => {
-            const rotation = scrolled * c.rotationSpeed + c.offset;
-            const yPos = (scrolled * 0.1 * (i % 2 === 0 ? 1 : -1));
-            c.el.style.transform = `translate3d(0, ${yPos}px, ${c.z}px) rotateX(${rotation}deg) rotateY(${rotation * 0.8}deg) scale(${c.scale})`;
-        });
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.scrollY;
+                cubes.forEach((c, i) => {
+                    const rotation = scrolled * c.rotationSpeed + c.offset;
+                    const yPos = (scrolled * 0.1 * (i % 2 === 0 ? 1 : -1));
+                    c.el.style.transform = `translate3d(0, ${yPos}px, ${c.z}px) rotateX(${rotation}deg) rotateY(${rotation * 0.8}deg) scale(${c.scale})`;
+                });
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 }
 
@@ -149,7 +157,55 @@ function initScrollToTop() {
 
 
 
-/* Modal Logic for Parcours */
+/* Universal Modal System */
+window.openContentModal = function(title, badge, content) {
+    const modal = document.createElement('div');
+    modal.className = 'custom-modal-overlay';
+    modal.id = 'dynamic-modal';
+    
+    modal.innerHTML = `
+        <div class="custom-modal">
+            <button class="modal-close" onclick="closeContentModal()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-header">
+                ${badge ? `<span class="modal-badge">${badge}</span>` : ''}
+                <h3 class="modal-title">${title}</h3>
+            </div>
+            <div class="modal-body">
+                <p>${content}</p>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="scroll-top-internal" onclick="this.closest('.modal-body').scrollTo({top: 0, behavior: 'smooth'})" 
+                            style="background: var(--gold); border: none; width: 40px; height: 40px; border-radius: 50%; color: var(--bg); cursor: pointer; display: inline-flex; align-items: center; justify-content: center;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+    
+    setTimeout(() => modal.classList.add('is-open'), 10);
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeContentModal();
+    });
+};
+
+window.closeContentModal = function() {
+    const modal = document.getElementById('dynamic-modal') || document.getElementById('parcours-modal');
+    if (!modal) return;
+
+    modal.classList.remove('is-open');
+    setTimeout(() => {
+        modal.remove();
+        document.body.style.overflow = '';
+    }, 400);
+};
+
+// Wrapper for legacy compatibility
 window.openParcoursModal = function(id) {
     const data = {
         'lokolink': {
@@ -163,50 +219,36 @@ window.openParcoursModal = function(id) {
             content: "L'idée est de moderniser la circulation communale. L'application Yély vient donc simplifier la vie aux populations dans leurs déplacements de tous les jours."
         }
     };
-
     const item = data[id];
-    if (!item) return;
+    if (item) openContentModal(item.title, item.badge, item.content);
+};
 
-    const modal = document.createElement('div');
-    modal.className = 'custom-modal-overlay';
-    modal.id = 'parcours-modal';
-    
-    modal.innerHTML = `
-        <div class="custom-modal">
-            <button class="modal-close" onclick="closeParcoursModal()">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            </button>
-            <div class="modal-header">
-                <span class="modal-badge">${item.badge}</span>
-                <h3 class="modal-title">${item.title}</h3>
-            </div>
-            <div class="modal-body">
-                <p>${item.content}</p>
-            </div>
-        </div>
-    `;
+window.closeParcoursModal = window.closeContentModal;
 
-    document.body.appendChild(modal);
+function initReadMore() {
+    const articles = document.querySelectorAll('.glass-panel');
     
-    // Prevent background scrolling
-    document.body.style.overflow = 'hidden';
-    
-    // Trigger animation
-    setTimeout(() => modal.classList.add('is-open'), 10);
+    articles.forEach(article => {
+        const p = article.querySelector('p');
+        if (!p) return;
 
-    // Close on click outside
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeParcoursModal();
+        const text = p.innerText;
+        // Truncate if long or specific section
+        if (text.length > 200 || article.hasAttribute('data-read-more')) {
+            const title = article.querySelector('h2, h3')?.innerText || "Détails";
+            const badge = article.querySelector('.eyebrow, .card-badge')?.innerText || "";
+            
+            p.classList.add('content-truncate');
+            
+            const btn = document.createElement('button');
+            btn.className = 'read-more-btn';
+            btn.innerHTML = `Lire plus <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+            
+            btn.onclick = (e) => {
+                e.preventDefault();
+                openContentModal(title, badge, text);
+            };
+            article.appendChild(btn);
+        }
     });
-};
-
-window.closeParcoursModal = function() {
-    const modal = document.getElementById('parcours-modal');
-    if (!modal) return;
-
-    modal.classList.remove('is-open');
-    setTimeout(() => {
-        modal.remove();
-        document.body.style.overflow = '';
-    }, 400);
-};
+}
