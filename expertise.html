@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="fr" data-theme="dark" style="background-color: #07070a; color: #f7f1e3;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expertise | Kevin Amon | ADSA</title>
+    <title>Expertise & Savoir-faire | Kevin Amon | ADSA</title>
+    <meta name="description" content="Découvrez les compétences techniques et la méthodologie de conception logicielle de Kevin Amon (ADSA) : Interfaces Prestige, Fullstack MERN, et Pilotage IA.">
+    <meta property="og:title" content="Expertise & Savoir-faire | Kevin Amon | ADSA">
+    <meta property="og:description" content="Découvrez les compétences techniques et la méthodologie de conception logicielle de Kevin Amon (ADSA).">
+    <meta property="og:image" content="./public/nwph.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="./public/nwph.png">
+
     <link rel="icon" href="./public/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <script>
+        (function() {
+            var t = localStorage.getItem("kevin-amon-theme") || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute("data-theme", t);
+        })();
+    </script>
+    <style>
+        html, body { background-color: #07070a; color: #f7f1e3; }
+        [data-theme="light"] { background-color: #f4efe5; color: #31291d; }
+    </style>
     <link rel="stylesheet" href="./public/global.css">
 </head>
+
 <body>
     <div class="cube-scene"></div>
     <div class="ambient ambient-one"></div>
@@ -23,11 +44,24 @@
                 <a href="expertise.html">Expertise</a>
                 <a href="parcours.html">Parcours</a>
                 <a href="accomplissements.html">Accomplissements</a>
+                <a href="contact.html" class="nav-contact-btn">Contact</a>
             </div>
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
-                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
                 </button>
                 <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
                     <span></span><span></span><span></span>
@@ -39,7 +73,7 @@
     <div class="menu-overlay" id="menu-overlay">
         <nav class="menu-nav">
             <a href="index.html">Accueil</a>
-            <a href="about.html">A propos</a>
+            <a href="about.html">À propos</a>
             <a href="expertise.html">Expertise</a>
             <a href="parcours.html">Parcours</a>
             <a href="accomplissements.html">Accomplissements</a>
@@ -47,46 +81,50 @@
         </nav>
     </div>
 
-    <main class="shell" style="padding-top: 8rem;">
+    <main class="shell" style="padding-top: 8rem; padding-bottom: 6rem;">
         <a href="index.html" class="back-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
             Retour
         </a>
         <section class="reveal">
+            <span class="eyebrow">Expertise</span>
             <h2 class="section-title">Expertise Technique</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 <article class="glass-panel" style="padding: 2rem;">
                     <h3 style="color: var(--gold); margin-bottom: 1rem;">Interfaces Prestige</h3>
-                    <p>Développement front-end haute performance avec React, animations fluides et design responsive sans compromis.</p>
+                    <p>Développement front-end haute performance, animations fluides, ergonomie intuitive et design responsive sans compromis.</p>
                 </article>
                 <article class="glass-panel" style="padding: 2rem;">
                     <h3 style="color: var(--gold); margin-bottom: 1rem;">Architecture Full-stack</h3>
-                    <p>Conception de backends robustes avec Node.js, Express et PostgreSQL. APIs sécurisées et évolutives.</p>
+                    <p>Conception de backends robustes, bases de données structurées et APIs sécurisées, évolutives et documentées.</p>
                 </article>
                 <article class="glass-panel" style="padding: 2rem;">
-                    <h3 style="color: var(--gold); margin-bottom: 1rem;">Produit & UX</h3>
-                    <p>Accompagnement stratégique sur l'expérience utilisateur et l'optimisation des parcours de conversion.</p>
+                    <h3 style="color: var(--gold); margin-bottom: 1rem;">Produit & Stratégie</h3>
+                    <p>Accompagnement de bout en bout : de la vision stratégique à l'optimisation des parcours utilisateurs et de la rétention.</p>
                 </article>
             </div>
         </section>
 
         <section class="reveal" style="margin-top: 6rem;">
-            <h2 class="section-title">Ma Méthode</h2>
+            <span class="eyebrow">Savoir-faire</span>
+            <h2 class="section-title">Ce Que Je Sais Faire</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
                 <article class="glass-panel" style="padding: 2rem;">
                     <strong style="color: var(--gold); font-size: 1.5rem; display: block; margin-bottom: 1rem;">01</strong>
-                    <h3 style="margin-bottom: 0.5rem;">Cadre & Direction</h3>
-                    <p style="font-size: 0.9rem; color: var(--muted);">Analyse des besoins et définition de la trajectoire technique et visuelle.</p>
+                    <h3 style="margin-bottom: 0.5rem;">Cadrage & Architecture Produit</h3>
+                    <p style="font-size: 0.9rem; color: var(--muted);">Je traduis vos besoins stratégiques en une architecture technique robuste et une direction visuelle percutante avant même la première ligne de code.</p>
                 </article>
                 <article class="glass-panel" style="padding: 2rem;">
                     <strong style="color: var(--gold); font-size: 1.5rem; display: block; margin-bottom: 1rem;">02</strong>
-                    <h3 style="margin-bottom: 0.5rem;">Prototype & Système</h3>
-                    <p style="font-size: 0.9rem; color: var(--muted);">Mise en place des fondations et itérations rapides sur les fonctionnalités clés.</p>
+                    <h3 style="margin-bottom: 0.5rem;">Développement Piloté & Intégration Rapide</h3>
+                    <p style="font-size: 0.9rem; color: var(--muted);">Je pilote des agents IA de pointe pour accélérer le développement, tout en verrouillant la cohérence logique, les API et la sécurité système.</p>
                 </article>
                 <article class="glass-panel" style="padding: 2rem;">
                     <strong style="color: var(--gold); font-size: 1.5rem; display: block; margin-bottom: 1rem;">03</strong>
-                    <h3 style="margin-bottom: 0.5rem;">Finition & Livraison</h3>
-                    <p style="font-size: 0.9rem; color: var(--muted);">Optimisation finale, tests rigoureux et déploiement en production.</p>
+                    <h3 style="margin-bottom: 0.5rem;">Contrôle Qualité, Finition & Déploiement</h3>
+                    <p style="font-size: 0.9rem; color: var(--muted);">Issu du contrôle qualité industriel, j'applique des audits stricts : tests fonctionnels, réactivité UI, optimisation SEO et mise en production sans accroc.</p>
                 </article>
             </div>
         </section>
@@ -97,7 +135,8 @@
     </footer>
 
     <button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
@@ -105,4 +144,5 @@
     <script src="./public/data.js"></script>
     <script src="./public/main.js"></script>
 </body>
+
 </html>

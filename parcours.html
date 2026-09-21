@@ -1,15 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="fr" data-theme="dark" style="background-color: #07070a; color: #f7f1e3;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parcours | Kevin Amon | ADSA</title>
+    <meta name="description" content="Parcours académique et professionnel de Kevin Amon (ADSA) : BTS Chimie Contrôle obtenu, projets innovants et création de KevyLab.">
+    <meta property="og:title" content="Parcours | Kevin Amon | ADSA">
+    <meta property="og:description" content="Parcours académique et professionnel de Kevin Amon (ADSA).">
+    <meta property="og:image" content="./public/nwph.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="./public/nwph.png">
     <link rel="icon" href="./public/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <script>
+        (function() {
+            var t = localStorage.getItem("kevin-amon-theme") || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute("data-theme", t);
+        })();
+    </script>
+    <style>
+        html, body { background-color: #07070a; color: #f7f1e3; }
+        [data-theme="light"] { background-color: #f4efe5; color: #31291d; }
+    </style>
     <link rel="stylesheet" href="./public/global.css">
 </head>
+
 <body>
     <div class="cube-scene"></div>
     <div class="ambient ambient-one"></div>
@@ -27,8 +47,20 @@
             </div>
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
-                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
                 </button>
                 <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
                     <span></span><span></span><span></span>
@@ -48,27 +80,33 @@
         </nav>
     </div>
 
-    <main class="shell" style="padding-top: 8rem;">
+    <main class="shell" style="padding-top: 8rem; padding-bottom: 6rem;">
         <a href="index.html" class="back-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
             Retour
         </a>
         <h2 class="section-title reveal">Mon Parcours</h2>
         <div id="parcours-container" class="timeline-container">
             <div class="timeline-line"></div>
-            
+
             <!-- Item 1 -->
             <div class="timeline-item reveal">
                 <div class="timeline-icon-wrapper">
                     <div class="timeline-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
                     </div>
                 </div>
                 <div class="parcours-card glass-panel">
-                    <span class="card-badge">EN COURS</span>
+                    <span class="card-badge" style="background: rgba(0, 179, 104, 0.18); color: #00e680; border: 1px solid rgba(0, 179, 104, 0.35);">OBTENU</span>
                     <h3 class="card-title">BTS I.A.C. – Option Contrôle</h3>
                     <p class="card-location">ISTTA</p>
-                    <p class="card-desc">Spécialisation en contrôle qualité, analyses physico-chimiques, microbiologie et HACCP.</p>
+                    <p class="card-desc">Diplôme validé avec spécialisation en contrôle qualité, analyses physico-chimiques, microbiologie et normes HACCP.</p>
                 </div>
             </div>
 
@@ -76,7 +114,11 @@
             <div class="timeline-item reveal">
                 <div class="timeline-icon-wrapper">
                     <div class="timeline-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
                     </div>
                 </div>
                 <div class="parcours-card glass-panel">
@@ -91,14 +133,18 @@
             <div class="timeline-item reveal">
                 <div class="timeline-icon-wrapper">
                     <div class="timeline-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
                     </div>
                 </div>
                 <div class="parcours-card glass-panel">
-                    <span class="card-badge">EN COURS</span>
+                    <span class="card-badge" style="background: rgba(0, 179, 104, 0.18); color: #00e680; border: 1px solid rgba(0, 179, 104, 0.35);">TERMINÉ</span>
                     <h3 class="card-title">Portfolio Académique</h3>
                     <p class="card-location">Projet Personnel</p>
-                    <p class="card-desc">Développement de ce site web interactif pour présenter mes compétences.</p>
+                    <p class="card-desc">Conception et développement complet de cet écosystème web pour exposer ma vision et mes compétences.</p>
                 </div>
             </div>
 
@@ -106,7 +152,11 @@
             <div class="timeline-item reveal">
                 <div class="timeline-icon-wrapper">
                     <div class="timeline-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
                     </div>
                 </div>
                 <div class="parcours-card glass-panel">
@@ -122,14 +172,18 @@
             <div class="timeline-item reveal">
                 <div class="timeline-icon-wrapper">
                     <div class="timeline-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
                     </div>
                 </div>
                 <div class="parcours-card glass-panel">
                     <span class="card-badge">TERMINÉ</span>
                     <h3 class="card-title">Développement d'une application de Taxi en ligne.</h3>
                     <p class="card-location">Maféré</p>
-                    <p class="card-desc">L'idée est de moderniser la circulation communale. L'application Yély vient donc simplifier la vie aux populations dan...</p>
+                    <p class="card-desc">L'idée est de moderniser la circulation communale. L'application Yély vient donc simplifier la vie aux populations dans leurs déplacements...</p>
                     <a href="javascript:void(0)" onclick="openParcoursModal('yely')" class="card-link">Cliquez pour voir plus</a>
                 </div>
             </div>
@@ -144,7 +198,8 @@
     </footer>
 
     <button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
@@ -152,4 +207,5 @@
     <script src="./public/data.js"></script>
     <script src="./public/main.js"></script>
 </body>
+
 </html>

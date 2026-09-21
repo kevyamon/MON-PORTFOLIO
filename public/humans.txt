@@ -4,11 +4,10 @@
   From: Abidjan, Côte d'Ivoire
 
 /* THANKS */
-  Agency: KevyLLC
+  Lab: KevyLab
 
 /* SITE */
-  Last update: 2026/04/28
+  Last update: 2026/09/21
   Language: French
   Standards: HTML5, CSS3, ES6+
-  Components: React, Vite, Framer Motion
-  Software: Antigravity AI
+  Role: AI-Driven Software Architect (ADSA)

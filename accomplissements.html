@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="dark">
+<html lang="fr" data-theme="dark" style="background-color: #07070a; color: #f7f1e3;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accomplissements | Kevin Amon | ADSA</title>
+    <meta name="description" content="Projets et réalisations de Kevin Amon (ADSA) : KevyLab, 2Mots, AFB STUDIO, Yély, MeetNova, NovaTech Loko.">
+    <meta property="og:title" content="Accomplissements | Kevin Amon | ADSA">
+    <meta property="og:description" content="Projets et réalisations de Kevin Amon (ADSA) : KevyLab, 2Mots, AFB STUDIO, Yély, MeetNova.">
+    <meta property="og:image" content="./public/nwph.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="./public/nwph.png">
+
     <link rel="icon" href="./public/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <script>
+        (function() {
+            var t = localStorage.getItem("kevin-amon-theme") || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute("data-theme", t);
+        })();
+    </script>
+    <style>
+        html, body { background-color: #07070a; color: #f7f1e3; }
+        [data-theme="light"] { background-color: #f4efe5; color: #31291d; }
+    </style>
     <link rel="stylesheet" href="./public/global.css">
 </head>
+
 <body>
     <div class="cube-scene"></div>
     <div class="ambient ambient-one"></div>
@@ -27,8 +48,20 @@
             </div>
             <div class="nav-actions">
                 <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
-                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
                 </button>
                 <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
                     <span></span><span></span><span></span>
@@ -48,56 +81,87 @@
         </nav>
     </div>
 
-    <main class="shell" style="padding-top: 8rem;">
+    <main class="shell" style="padding-top: 8rem; padding-bottom: 6rem;">
         <a href="index.html" class="back-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
             Retour
         </a>
         <h2 class="section-title reveal">Mes Accomplissements</h2>
         <div id="accomplissements-container" class="accomplissements-grid">
-            <!-- KevyLLC -->
+            <!-- KevyLab -->
             <div class="accomplissement-card glass-panel reveal delay-1">
-                <div class="acc-media" style="background: rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; padding: 2rem;">
-                    <img src="https://res.cloudinary.com/dhc4yidpa/image/upload/v1778009885/3cc9017d-2f3f-4843-a51c-0b52cb8fdf45.png" alt="KevyLLC Logo" style="max-height: 120px; width: auto; object-fit: contain;">
+                <div class="acc-media"
+                    style="background: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center; padding: 2rem;">
+                    <img src="https://res.cloudinary.com/dqueeyulc/image/upload/v1790009442/kevylab-logo_lpttf5.png"
+                        alt="KevyLab Logo" style="max-height: 120px; width: auto; object-fit: contain;">
                 </div>
                 <div class="acc-content">
-                    <span style="color: var(--gold); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-top: 1rem;">Fondateur & CEO</span>
-                    <h3 class="card-title" style="margin: 0.5rem 0;">KevyLLC</h3>
-                    <p class="card-desc">Studio d'architecture et de conception digitale premium. Spécialisé dans la création d'écosystèmes web de haut standing.</p>
+                    <span
+                        style="color: var(--gold); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-top: 1rem;">Fondateur</span>
+                    <h3 class="card-title" style="margin: 0.5rem 0;">KevyLab</h3>
+                    <p class="card-desc">KevyLab est un laboratoire technologique créé par Kevin Amon dans l'optique de détecter les talents ivoiriens de la nouvelle vague de technologie en symbiose avec l'IA et de mettre en avant dans la mesure du possible, ceux qui en ont besoin.</p>
+                </div>
+            </div>
+
+            <!-- 2Mots Game -->
+            <div class="accomplissement-card glass-panel reveal delay-2">
+                <div class="acc-media"
+                    style="background: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center; padding: 2rem;">
+                    <img src="https://res.cloudinary.com/dqueeyulc/image/upload/v1790009374/icon_lrg8ua.png"
+                        alt="2Mots Game Icon" style="max-height: 120px; width: auto; object-fit: contain; border-radius: 16px;">
+                </div>
+                <div class="acc-content">
+                    <span
+                        style="color: var(--gold); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-top: 1rem;">Jeu & Réflexion</span>
+                    <h3 class="card-title" style="margin: 0.5rem 0;">2Mots</h3>
+                    <p class="card-desc">Jeu de réflexion et d'énigmes captivant consistant à résoudre des défis mentaux en trouvant le lien logique subtil reliant deux mots. Une expérience fluide et stimulante.</p>
+                    <a href="https://twomots-web.onrender.com" target="_blank" class="card-link"
+                        style="color: var(--gold); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.8rem;">En savoir plus →</a>
                 </div>
             </div>
 
             <!-- AFB STUDIO -->
-            <div class="accomplissement-card glass-panel reveal delay-2">
-                <div class="acc-media" style="background: rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; padding: 2rem;">
-                    <img src="https://res.cloudinary.com/dhc4yidpa/image/upload/v1773771090/yely/pending_proofs/kjxyrm8fqlbhhevexn0i.jpg" alt="AFB Studio Logo" style="max-height: 120px; width: auto; object-fit: contain; border-radius: 8px;">
+            <div class="accomplissement-card glass-panel reveal delay-3">
+                <div class="acc-media"
+                    style="background: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center; padding: 2rem;">
+                    <img src="https://res.cloudinary.com/dhc4yidpa/image/upload/v1773771090/yely/pending_proofs/kjxyrm8fqlbhhevexn0i.jpg"
+                        alt="AFB Studio Logo" style="max-height: 120px; width: auto; object-fit: contain; border-radius: 8px;">
                 </div>
                 <div class="acc-content">
-                    <span style="color: var(--gold); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-top: 1rem;">CTO & Co-Founder</span>
+                    <span
+                        style="color: var(--gold); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-top: 1rem;">Concepteur & Co-Fondateur</span>
                     <h3 class="card-title" style="margin: 0.5rem 0;">AFB STUDIO</h3>
-                    <p class="card-desc">L'académie de référence pour les AI Fullstack Builders. Formation intensive sur l'architecture moderne et le pilotage IA.</p>
+                    <p class="card-desc">L'académie de référence pour les bâtisseurs de solutions digitales modernes. Formation intensive sur l'architecture logicielle moderne et le pilotage IA.</p>
                 </div>
             </div>
 
-            <!-- Item 1 -->
-            <div class="accomplissement-card glass-panel reveal delay-3">
+            <!-- Yély -->
+            <div class="accomplissement-card glass-panel reveal">
                 <div class="acc-media">
-                    <img src="https://res.cloudinary.com/dhc4yidpa/image/upload/v1777993624/f1fd46e1-77d6-4219-8e9b-825e546d9ec5.png" alt="Affiche Yély à Maféré">
+                    <img src="https://res.cloudinary.com/dhc4yidpa/image/upload/v1777993624/f1fd46e1-77d6-4219-8e9b-825e546d9ec5.png"
+                        alt="Affiche Yély à Maféré">
                 </div>
                 <div class="acc-content">
-                    <h3 class="card-title" style="margin-top: 1rem;">Développement de Yély</h3>
-                    <p class="card-desc">On a développé Yély ! Une application pour moderniser la circulation communale avec les taxi.</p>
-                    <a href="https://download-yely.vercel.app/" target="_blank" class="card-link" style="color: var(--accent-green); text-decoration: none; font-weight: 700;">Voir la ressource source</a>
+                    <span
+                        style="color: var(--gold); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-top: 1rem;">Application Mobile</span>
+                    <h3 class="card-title" style="margin: 0.5rem 0;">Développement de Yély</h3>
+                    <p class="card-desc">On a développé Yély ! Une application pour moderniser la circulation communale avec les taxis à Maféré.</p>
+                    <a href="https://download-yely.vercel.app/" target="_blank" class="card-link"
+                        style="color: var(--accent-green); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.8rem;">Voir la ressource source →</a>
                 </div>
             </div>
 
             <!-- MeetNova -->
             <div class="accomplissement-card glass-panel reveal">
                 <div class="acc-media">
-                    <img src="https://res.cloudinary.com/dqueeyulc/image/upload/q_auto/f_auto/v1778614213/meetnova/news/vxg1sluzfo8mmy1w1yza.jpg" alt="MeetNova Platform">
+                    <img src="https://res.cloudinary.com/dqueeyulc/image/upload/q_auto/f_auto/v1778614213/meetnova/news/vxg1sluzfo8mmy1w1yza.jpg"
+                        alt="MeetNova Platform">
                 </div>
                 <div class="acc-content">
-                    <span style="color: var(--gold); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-top: 1rem;">Projet Signature</span>
+                    <span
+                        style="color: var(--gold); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-top: 1rem;">Projet Signature</span>
                     <h3 class="card-title" style="margin: 0.5rem 0;">MeetNova</h3>
                     <p class="card-desc">Conception et développement de la plateforme officielle de la conférence du club informatique NovaTech Loko.</p>
                 </div>
@@ -106,10 +170,12 @@
             <!-- NovaTech Lead -->
             <div class="accomplissement-card glass-panel reveal">
                 <div class="acc-media">
-                    <img src="https://res.cloudinary.com/dqueeyulc/image/upload/q_auto/f_auto/v1778671856/0645729d-aa7e-4e56-979f-e5862402fd37.png" alt="NovaTech Logo">
+                    <img src="https://res.cloudinary.com/dqueeyulc/image/upload/q_auto/f_auto/v1778671856/0645729d-aa7e-4e56-979f-e5862402fd37.png"
+                        alt="NovaTech Logo">
                 </div>
                 <div class="acc-content">
-                    <span style="color: var(--gold); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-top: 1rem;">Product Manager & Tech Lead</span>
+                    <span
+                        style="color: var(--gold); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-top: 1rem;">Product Manager & Tech Lead</span>
                     <h3 class="card-title" style="margin: 0.5rem 0;">NovaTech Loko</h3>
                     <p class="card-desc">Direction de la commission projets et innovation. Pilotage stratégique et technique des solutions du club informatique.</p>
                 </div>
@@ -125,7 +191,8 @@
     </footer>
 
     <button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
     </button>
@@ -133,4 +200,5 @@
     <script src="./public/data.js"></script>
     <script src="./public/main.js"></script>
 </body>
+
 </html>
