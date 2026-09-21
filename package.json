@@ -4,9 +4,7 @@
   "description": "Portfolio de Kevin Amon - AI-Driven Software Architect (ADSA)",
   "scripts": {
     "dev": "npx live-server --port=3000 --open=index.html",
-    "start": "npx live-server --port=3000 --open=index.html",
-    "build": "echo 'Build OK'",
-    "serve": "npx serve ."
+    "start": "npx live-server --port=3000 --open=index.html"
   },
   "keywords": [
     "portfolio",
